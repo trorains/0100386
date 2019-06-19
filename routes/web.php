@@ -21,4 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
  Route::get('/particularfees', 'FeesController@index');
 Route::post('/studentfees', 'FeesController@newFees');
 Route::get('/studentfees/allpayements', 'FeesController@allStudentFees');
-Route::get('/studentfees/{studentemail}', 'FeesController@particularStudentFees');
+Route::post('/studentfeees', 'FeesController@particularStudentFees');

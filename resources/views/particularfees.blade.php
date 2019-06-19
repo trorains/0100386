@@ -17,7 +17,7 @@
                     Search for student's payements!
                 </div>
                 <div class="card-body">
-                    <form method="GET" action="/studentfees/{email} ">
+                    <form method="POST" action="/studentfeees ">
                         @csrf
 
                         
@@ -52,6 +52,37 @@
                         @endif
 
                     </form>
+                    @if (isset($students))
+                     <table>
+                <tr>
+                    <td>Payement ID </td>
+                    <td>Student Email </td>
+                    <td>Year </td>
+                    <td>Semester </td>
+                    <td>Payement Amount </td>
+                    <td>Date Paid </td>
+                     <td>Date Updated </td>
+                </tr>
+                
+                @foreach  ($students as $student)
+                <tr>
+                    <td>{{$student->id}} </td>
+                    <td>{{$student->studentemail}} </td>
+                    <td>{{$student->year}} </td>
+                    <td>{{$student->semester}} </td>
+                    <td>{{$student->amountpaid}} </td>
+                    <td>{{$student->created_at}} </td>
+                    <td>{{$student->updated_at}} </td>
+                    
+                </tr>
+                @endforeach
+            </table>
+            @endif
+                    <!-- @php
+                    if(isset($students)){
+                    dd($students);
+                    }
+                    @endphp -->
             </div>
         </div>
     </div>
