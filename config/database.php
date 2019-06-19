@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Str;
-
+$DATABASE_URL = parse_url('postgres://htrlelzumofjzn:bd6443a5037038cf10599241ce81b31777a62732baa128072de21de698716cd2@ec2-23-21-148-223.compute-1.amazonaws.com:5432/d61e5u5fo3htn2'); 
 return [
 
     /*
@@ -15,7 +15,8 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
+
 
     /*
     |--------------------------------------------------------------------------
@@ -49,8 +50,8 @@ return [
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'username' => env('DB_USERNAME', '100386'),
+            'password' => env('DB_PASSWORD', '1Tyronekite'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -65,7 +66,7 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
+            'url' => env('postgres://htrlelzumofjzn:bd6443a5037038cf10599241ce81b31777a62732baa128072de21de698716cd2@ec2-23-21-148-223.compute-1.amazonaws.com:5432/d61e5u5fo3htn2'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '5432'),
             'database' => env('DB_DATABASE', 'forge'),
